@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center ">Check This Cool Form</h1>
+    <form class="container mt-5" id="form">
+        <div class="form-group">
+          <label for="movie">Movie Name</label>
+          <input type="text" class="form-control" name="movie" placeholder="Enter your favourite movie">
+        </div>
+        <div class="form-group" >
+          <label for="rating">Rating</label>
+          <input type="number" class="form-control" name="rating" placeholder="8">
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+      </form>
+      <ul class="container-lg " id="list">
+
+      </ul>
+    <script>
+        const form=document.getElementById("form");
+        const list=document.getElementById("list");
+        form.addEventListener("submit",(e)=>
+        {
+            e.preventDefault();
+            let moviename=form.elements[0];
+            let rating=form.elements[1];
+            let li=document.createElement('li');
+            li.innerHTML=`Movie name=<b>${moviename.value}</b> and Rating=${rating.value}`;
+            console.log(li.innerText);
+            list.append(li);
+            console.log("Submit~~~");
+            
+        })
+    </script>
+</body>
+</html>
